@@ -6,8 +6,8 @@
 	$Model = $TestsModel; // in constants.php
 
 	/** Saving test **/
-	if ( isset($_GET["result"]) && isset($_SESSION["username"]) ) {
-		$query_string = "INSERT INTO `tests`(`user_id`, `test_id`, `source_index`, `subjects`, `score`, `total`, `time_taken`, `date`, `answers`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	if (isset($_GET["result"]) && isset($_SESSION["user_id"])) {
+		$query_string = "INSERT INTO `users.tests`(`user_id`, `test_id`, `source_index`, `subjects`, `score`, `total`, `time_taken`, `date`, `answers`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 		$test_id = $_GET["test_name"]; // so we can get info from the model
 
 		$subjects = $_GET["subject_list"];
@@ -21,14 +21,14 @@
 		$score = calculate_score($filtered_questions, $subjects, $user_choices);
 		if ($score == -1) die("Something went wrong!");
 
-		query($query_string, $_SESSION["id"], $test_id, $_GET["source_index"], json_encode($subjects), $score, $_GET["total"], $_GET["time_taken"], date("Y/m/d"), json_encode($user_choices));
+		query($query_string, $_SESSION["user_id"], $test_id, $_GET["source_index"], json_encode($subjects), $score, $_GET["total"], $_GET["time_taken"], date("Y/m/d"), json_encode($user_choices));
 
-		$result = query("SELECT `counter` FROM `tests` WHERE counter = LAST_INSERT_ID()")[0];
+		$result = query("SELECT `counter` FROM `users.tests` WHERE counter = LAST_INSERT_ID()")[0];
 
 		// TODO: calculate and update user's rank
 
-		die(SITE_PROTOCOL . "://" . SITE_DOMAIN . SITE_BASE_LINK . "profile/" . $_SESSION["username"] . "/" . $result["counter"] . "/");
-	} elseif ( isset($_GET["result"]) ) {
+		die(SITE_PROTOCOL . "://" . SITE_DOMAIN . SITE_BASE_LINK . "profile/" . $_SESSION["user_id"] . "/" . $result["counter"] . "/");
+	} elseif (isset($_GET["result"])) {
 		$test_id = $_GET["test_name"];
 		
 		$subjects = $_GET["subject_list"];
@@ -58,8 +58,12 @@
 	/**
 	 ** GET REQUEST
 	 **/
-	if ( isset($_GET["test"]) ) {
+	if (isset($_GET["test"])) {
 		$test = $_GET["test"];
+
+		if (!isset($Model[$test]))
+			error_404();
+
 		render("header", ["title" => $Model[$test]["title"] . " | Online Tests",
 							"desc" => $Model[$test]["desc"]]);
 	}
@@ -69,7 +73,7 @@
 	}
 	
 	// Header for headings
-	if ( isset($test) )
+	if (isset($test))
 		echo'
     <header class="content-header">
 		<div class="content-main-header" style="background-image: url(\'images/otests/' . $test . '/header-bg.jpg\');">
@@ -80,21 +84,18 @@
 
 ?>
 
-    <main <?php if ( !isset($_GET["result"]) && empty($_POST) ) echo 'class="sided"'; ?>>
+    <main <?php if (!isset($_GET["result"]) && empty($_POST)) echo 'class="sided"'; ?>>
 		
 		<?php
-			/**
-			 ** GET REQUEST
-			 **/
-			// Test Handler
-			if ( isset($test) ) {
+			/** GET REQUEST **/
+			if (isset($test)) // Test Handler
+			{
 				render($Model[$test]["path_home"], $Model[$test]["test_data"]);
-				update_trending_data("http://notesnetwork.org" . $_SERVER['REQUEST_URI'], $Model[$test]["title"] . " | Online Tests");
+				update_trending_data(SITE_PROTOCOL . "://" . SITE_DOMAIN . SITE_BASE_LINK . $_SERVER['REQUEST_URI'], $Model[$test]["title"] . " | Online Tests");
 			}
-			/**
-			 ** POST REQUEST
-			 **/
-			elseif ( !empty($_POST) ) {
+			/** POST REQUEST **/
+			elseif (!empty($_POST))
+			{
 				$name = $_POST["name"];
 				( isset($_POST["timed"]) ) ? $timed = true : $timed = false;
 				
@@ -102,25 +103,21 @@
 
 				render("components/MathJax");
 			}
-			/**
-			 ** DEFAULT
-			 **/
-			else {
+			/** DEFAULT **/
+			else
+			{
 				render("online_tests/otests_default");
 			}
-			
 		?>
 		
 	</main>
 
 <?php
-	
-	if ( !isset($_GET["result"]) && empty($_POST) )
+	if (!isset($_GET["result"]) && empty($_POST))
 		render("components/sidebar");
 	
-	if ( isset($test) )
+	if (isset($test))
 		render("components/comments-section");
 	
 	render("footer");
-
 ?>

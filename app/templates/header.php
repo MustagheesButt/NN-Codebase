@@ -16,30 +16,19 @@
 				type="image/png" 
 				href="./images/favicon.png">
 		<!-- FB JS SDK -->
-		<script>
-		  window.fbAsyncInit = function() {
-		    FB.init({
-		      appId      : '1856099134626810',
-		      cookie     : true,
-		      xfbml      : true,
-		      version    : 'v2.9'
-		    });
-		    FB.AppEvents.logPageView();
-		  };
-
-		  (function(d, s, id){
-		     var js, fjs = d.getElementsByTagName(s)[0];
-		     if (d.getElementById(id)) {return;}
-		     js = d.createElement(s); js.id = id;
-		     js.src = "//connect.facebook.net/en_US/all.js";
-		     fjs.parentNode.insertBefore(js, fjs);
-		   }(document, 'script', 'facebook-jssdk'));
-		</script>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=1856099134626810&autoLogAppEvents=1';
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
     </head>
     <body>
 		<nav>
 			<div class="nav-top">
-				<a href="./"><img src="./images/logo.png" class="logo" /></a>
+				<a href="/"><img src="./images/logo.png" class="logo" /></a>
 			</div>
 			
 			<div class="nav-bottom">
@@ -68,24 +57,25 @@
 							<li><a href="online-tests/SAT/">SAT</a></li>
 						</ul>
 					</li>
-					<li><a href="./contact.php">Contact</a>
+					<li><a href="contact/">Contact</a>
 						<ul class="dropdown">
-							<li><a href="./contact.php?about">About Us</a></li>
+							<li><a href="about-us/">About Us</a></li>
 						</ul>
 					</li>
-					<li><a href="./contact.php?privacy_policy">Privacy Policy</a></li>
-					<li class="login-register"><?php
-						if ( isset($_SESSION["username"]) ) {
-							$row = query("SELECT * FROM users WHERE username = ?", $_SESSION["username"])[0];
+					<li><a href="privacy-policy/">Privacy Policy</a></li>
+					<li class="login-register">
+					<?php
+						if ( isset($_SESSION["user_id"]) ) {
+							$row = query("SELECT * FROM `accounts.users` WHERE `user_id` = ?", $_SESSION["user_id"])[0];
 							echo "<a>" . $row["full_name"] . " &nbsp;<i class=\"fa fa-angle-down\"></i></a>
 						<ul class=\"dropdown\">
 							<li><a href=\"account/\">My Account</a></li>
-							<li><a href=\"profile/" . $_SESSION["username"] . "/\">Public Profile</a></li>
-							<li><a id=\"logout\">Logout</a></li>
+							<li><a href=\"profile/" . $_SESSION["user_id"] . "/\">Public Profile</a></li>
+							<li><a class=\"logout-btn\">Logout</a></li>
 						</ul>";
 						}
 						else
-							echo "<button class=\"login-btn btn--facebook\">Login with Facebook</button>";
+							echo "<a href=\"#!\" class=\"login-btn\">Login/Register</a>";
 					?>
 					
 					</li>

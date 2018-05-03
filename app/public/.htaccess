@@ -14,6 +14,14 @@ RewriteRule ^notes/$ notes.php
 
 RewriteRule ^past-papers/$ past_papers.php
 
+RewriteRule ^past-papers/(.*)/$ past_papers.php?grade=$1
+
+RewriteRule ^contact/$ contact.php
+
+RewriteRule ^about-us/$ contact.php?about
+
+RewriteRule ^privacy-policy/$ contact.php?privacy_policy
+
 # server.php (notes and past papers)
 
 RewriteRule ^content/notes/(.*)/(.*)/(.*)/(.*)/$ server.php?category=notes&grade=$1&subject=$2&chapter=$3&type=$4
@@ -28,7 +36,7 @@ RewriteRule ^online-tests/(.*)/$ otests.php?test=$1
 
 RewriteRule ^online-tests/$ otests.php
 
-# login & profile stuff below
+# login & profile shit below
 
 RewriteRule ^profile/(.*)/(.*)/$ members.php?profile=$1&test=$2
 
@@ -38,6 +46,6 @@ RewriteRule ^login/$ members.php?login
 
 RewriteRule ^account/$ members.php
 
-# Adverts stuff
+# Adverts shit
 
 RewriteRule ^adsense/(.*)/(.*)/$ AdvertisementController.php?id=$1&redirectTo=$2

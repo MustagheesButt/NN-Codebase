@@ -120,18 +120,6 @@ $(document).ready(function () {
 		}
 		imp_click_counter++;
 	});*/
-
-	$("#logout").click(function () {
-		$.ajax({
-			type: "POST",
-			url: "members.php",
-			data: {"logout": true},
-			success: function (responseText) {
-				console.log(responseText);
-				location.reload();
-			}
-		});
-	});
 });
 
 function getDisplayQuote() {
@@ -141,7 +129,7 @@ function getDisplayQuote() {
 			allQuotes = JSON.parse(xhr.responseText);
 			x = Math.round(Math.random() * allQuotes.length)
 			document.querySelector("#random-quote > blockquote").innerHTML = allQuotes[x].quote;
-			document.querySelector("#random-quote > cite").innerHTML = "&mdash; " + allQuotes[x].name
+			document.querySelector("#random-quote > cite").innerHTML = "&mdash; " + allQuotes[x].name;
 		}
 	};
 	xhr.open("GET", "data/quotes.json", true);

@@ -305,6 +305,45 @@
             return false;
 	}
 
+	/** LOGIN/REGISTER **/
+	function login_or_register($data, $session_id = -1)
+	{
+		if ($session_id != -1)
+			session_id($session_id);
+
+		if (empty($data["email"]))
+			die("Email address must be provided!");
+		elseif (empty($data["user_id"]))
+			die("User ID must be provided!");
+
+		// query database for user
+		$rows = query("SELECT * FROM `accounts.users` WHERE `email` = ?", $data["email"]);
+		$row;
+		if (count($rows) == 1)
+		{
+			$row = $rows[0]; // first (and only) row
+			echo "logged in";
+		}
+		else
+		{
+			// else if not found, register as new user
+			$insert_id = query("INSERT INTO `accounts.users` (`user_id`, `email`, `full_name`, `profile_pic`, `about_me`, `registered_on`) VALUES (?,?,?,?,?,?)", 
+				$data["user_id"],
+				$data["email"],
+				$data["full_name"],
+				$data["profile_pic"],
+				$data["about"],
+				date("Y-m-d"));
+
+			$row = query("SELECT * FROM `accounts.users` WHERE `email` = ?", $data["email"])[0];
+			echo "registered";
+		}
+		// registered or logged in, store info in session
+		$_SESSION["user_id"] = $row["user_id"];
+		$_SESSION["email"] = $row["email"];
+		$_SESSION["full_name"] = $row["full_name"];
+	}
+
 	/** LOGOUT **/
 	function logout() {
 		// unset any session variables

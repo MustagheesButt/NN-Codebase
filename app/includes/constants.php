@@ -6,11 +6,11 @@
 
 	/** Meta **/
 	define("SITE_PROTOCOL", "http");
-	define("SITE_DOMAIN", "notesnetwork.org");
+	define("SITE_DOMAIN", "localhost");
 	define("SITE_BASE_LINK", "/app/public/");
 
 	// your database's name
-	define("DATABASE", "test");
+	define("DATABASE", "notesnetwork");
 
 	// your database's username
 	define("DB_USERNAME", "root");
@@ -26,9 +26,9 @@
 	define("SMTP_USERNAME", "");
 	define("SMTP_PASSWORD", "");
 
-	/** FB Login **/
-	define("FB_CLIENT_ID", "");
-	define("FB_CLIENT_SECRET", "");
+	/** NN Accounts Login **/
+	define("SSO_CLIENT_ID", 3);
+	define("SSO_CLIENT_SECRET", "RjpNi47ELnZ3KeQXvZaCX6t5VA2FXeSVELujrk3k");
 
 	/**
 	 * MODELS

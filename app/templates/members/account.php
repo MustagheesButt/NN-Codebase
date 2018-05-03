@@ -2,7 +2,7 @@
 	<h3>Profile Settings</h3>
 	
 	<div class="row-item">
-		<img src="<?= $Data["profile_pic"] ?>" style="width: 150px;" />
+		<img src="<?= $Data["Profile"]["profile_pic"] ?>" style="width: 150px;" />
 	</div>
 	
 	<form method="POST" action="members.php/" class="personal_info">
@@ -46,12 +46,12 @@
 			</thead>
 			<tbody>
 			<?php
-				$rows = query("SELECT * FROM tests WHERE user_id = ?", $Data["id"]);
+				$rows = $Data["User_tests"];
 				foreach ($rows as $key => $value) {
 					$percentage = round( ($value["score"]/$value["total"]) * 100, 2 );
 
 					echo "<tr><td>" . ($key + 1) . "</td>
-					<td><a href=\"" . SITE_PROTOCOL . "://" . SITE_DOMAIN . SITE_BASE_LINK . "profile/" . $Data["username"] . "/" . $value["counter"] . "/\">" . $Model[$value["test_id"]]["title"]  . "</a></td>
+					<td><a href=\"" . SITE_PROTOCOL . "://" . SITE_DOMAIN . SITE_BASE_LINK . "profile/" . $Data["Profile"]["user_id"] . "/" . $value["counter"] . "/\">" . $Model[$value["test_id"]]["title"]  . "</a></td>
 					<td>" . $value["total"] . "</td>
 					<td>" . $value["score"] . "</td>
 					<td>" . $percentage . "%</td>

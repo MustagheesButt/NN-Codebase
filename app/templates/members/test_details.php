@@ -1,5 +1,5 @@
 <?php
-	$rows = query("SELECT * FROM tests WHERE counter = ? AND user_id = ?", $_GET["test"], $Data["id"]);
+	$rows = query("SELECT * FROM `users.tests` WHERE counter = ? AND user_id = ?", $_GET["test"], $Data["user_id"]);
 
 	/** TODO: If $rows is empty then it's a 404 **/
 	$test_info = $rows[0];

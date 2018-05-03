@@ -101,7 +101,7 @@
 			<button>Submit</button>
 		</div>
 
-		<?php loadConfirmationBox(); ?>
+		<?php render("components/confirmation-box"); ?>
 	</div>
 	
 </section>

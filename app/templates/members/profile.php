@@ -1,17 +1,17 @@
 <section class="center" style="background-color: lightblue;">
 	<div class="profile_pic"></div>
-	<h1 class="name"><?= $Data["full_name"] ?> <small class="rank"><?= $Data["rank"] ?></small></h1>
+	<h1 class="name"><?= $Data["Profile"]["full_name"] ?> <small class="rank"><?= $Data["Profile"]["rank"] ?></small></h1>
 	<!-- (struggler, novice, competent, senior, veteran, sage, legend) based on average score number of tests given -->
-	<blockquote><?= $Data["about_me"] ?></blockquote>
+	<blockquote><?= $Data["Profile"]["about_me"] ?></blockquote>
 </section>
 
 <section>
-	<p>Member since <?= $Data["registered_on"] ?></p>
+	<p>Member since <?= $Data["Profile"]["registered_on"] ?></p>
 </section>
 
 <section>
 	<?php
-		$rows = query("SELECT * FROM tests WHERE user_id = ? AND public = 1", $Data["id"]);
+		$rows = $Data["User_tests"];
 		if (empty($rows)) {
 			echo "<div class=\"nothing\"><h2>Nothing to Show Here...</h2><h3>:(</h3></div>";
 		} else {
@@ -72,7 +72,7 @@
 	.profile_pic {
 		width: 250px;
 		height: 250px;
-		background-image: url("<?= $Data["profile_pic"] ?>");
+		background-image: url("<?= $Data["Profile"]["profile_pic"] ?>");
 		display: inline-block;
 		border-radius: 100%;
 		background-position: center;
