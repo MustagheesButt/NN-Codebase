@@ -11,6 +11,11 @@
 	
 	<div class="side-element" id="side-ad">
 		<h5>ADVERTISEMENT</h5>
+		<div id="ad-container" style="width: 250px; height: 250px;">
+			<a href="#" target="_blank">
+				<img src="" />
+			</a>
+		</div>
 	</div>
 	
 	<div class="side-element" id="trending">

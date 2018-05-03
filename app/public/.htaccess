@@ -28,7 +28,7 @@ RewriteRule ^online-tests/(.*)/$ otests.php?test=$1
 
 RewriteRule ^online-tests/$ otests.php
 
-# login & profile shit below
+# login & profile stuff below
 
 RewriteRule ^profile/(.*)/(.*)/$ members.php?profile=$1&test=$2
 
@@ -37,3 +37,7 @@ RewriteRule ^profile/(.*)/$ members.php?profile=$1
 RewriteRule ^login/$ members.php?login
 
 RewriteRule ^account/$ members.php
+
+# Adverts stuff
+
+RewriteRule ^adsense/(.*)/(.*)/$ AdvertisementController.php?id=$1&redirectTo=$2
