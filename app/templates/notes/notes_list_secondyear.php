@@ -198,37 +198,115 @@
 			<ol>
 				<li>Chapter 1: Data Basics
 					<span>
-						<a href="#">MCQs</a>,
+						<!--a href="#">MCQs</a-->,
 						<a href="./content/notes/second-year/computer/ch1/short-questions/">SQs</a>,
-						<a href="#">LQs</a>
+						<!--a href="#">LQs</a-->
 					</span>
 				</li>
 				
-				<li>Chapter 2: Basic Concepts and Terminology</li>
+				<li>Chapter 2: Basic Concepts and Terminology
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch2/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 3: Data Base Design Process</li>
+				<li>Chapter 3: Database Design Process
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch3/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 4: Data Integrity and Normalization</li>
+				<li>Chapter 4: Data Integrity and Normalization
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch4/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 5: Introduction to Microsoft Access</li>
+				<li>Chapter 5: Introduction to Microsoft Access
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch5/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 6: Table and Query</li>
+				<li>Chapter 6: Table and Query
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch6/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 7: Microsoft Access-forms and Reports</li>
+				<li>Chapter 7: Microsoft Access-forms and Reports
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch7/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 8: Getting Started with C</li>
+				<li>Chapter 8: Getting Started with C
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch8/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 9: Elements of C</li>
+				<li>Chapter 9: Elements of C
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch9/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 10: Input/Output</li>
+				<li>Chapter 10: Input/Output
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch10/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 11: Decision Constructs</li>
+				<li>Chapter 11: Decision Constructs
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch11/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 12: Loop Constructs</li>
+				<li>Chapter 12: Loop Constructs
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch12/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 13: Functions in C</li>
+				<li>Chapter 13: Functions in C
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch13/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 				
-				<li>Chapter 14: File Handling in C</li>
+				<li>Chapter 14: File Handling in C
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/computer/ch14/short-questions/">SQs</a>,
+						<!--a href="#">LQs</a-->
+					</span>
+				</li>
 			</ol>
 		</li>
 		
@@ -459,15 +537,69 @@
 		<li>
 			<h4>Pakistan Studies (Urdu)</h4>
 			<ol lang="ur" dir="rtl">
-				<li>باب ۱: اسلامی جمہوریہ پاکستان کا قیام</li>
-				<li>باب ۲: اسلامی جمہوریہ پاکستان کی ابتدائی مشکلات</li>
-				<li>باب ۳: اسلامی جمہوریہ پاکستان کا جغرافیہ</li>
-				<li>باب ۴: پاکستان کو اسلامی جمہوریہ بنانے کے اقدام</li>
-				<li>باب ۵: اسلامی جمہوریہ پاکستان کا حکومتی ڈھانچہ اور اچھا نظامِ حکومت</li>
-				<li>باب ۶: اسلامی جمہوریہ پاکستان کی ثقافت</li>
-				<li>باب ۷: اسلامی جمہوریہ پاکستان کی زبانیں</li>
-				<li>باب ۸: قومی یکجہتی اور خوشحالی</li>
-				<li>باب ۹: اسلامی جمہوریہ پاکستان میں معاشی منصوبہ بندی اور ترقی</li>
+				<li>باب ۱: اسلامی جمہوریہ پاکستان کا قیام
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch1/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch1/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۲: اسلامی جمہوریہ پاکستان کی ابتدائی مشکلات
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch2/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch2/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۳: اسلامی جمہوریہ پاکستان کا جغرافیہ
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch3/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch3/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۴: پاکستان کو اسلامی جمہوریہ بنانے کے اقدام
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch4/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch4/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۵: اسلامی جمہوریہ پاکستان کا حکومتی ڈھانچہ اور اچھا نظامِ حکومت
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch5/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch5/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۶: اسلامی جمہوریہ پاکستان کی ثقافت
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch6/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch6/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۷: اسلامی جمہوریہ پاکستان کی زبانیں
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch7/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch7/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۸: قومی یکجہتی اور خوشحالی
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch8/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch8/long-questions/">LQs</a>
+					</span>
+				</li>
+				<li>باب ۹: اسلامی جمہوریہ پاکستان میں معاشی منصوبہ بندی اور ترقی
+					<span>
+						<!--a href="#">MCQs</a-->,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch9/short-questions/">SQs</a>,
+						<a href="./content/notes/second-year/pakstudy-urdu/ch9/long-questions/">LQs</a>
+					</span>
+				</li>
 				<li>باب ۱۰: اسلامی جمہوریہ پاکستان کی خارجہ پالیسی 
 					<span>
 						<!--a href="#">MCQs</a-->,

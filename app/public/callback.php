@@ -1,13 +1,5 @@
-<?php
-	require("../includes/config.php");
+<div id="access_token"><?= $_GET['access_token'] ?></div>
 
-	$data_to_send = [
-		'user_id' => (int)$_POST['id'],
-		'email' => $_POST['email'],
-		'full_name' => $_POST['first_name'] . ($_POST['middle_name'] == '' ? ' ' : ' ' . $_POST['middle_name'] . ' ') . $_POST['last_name'],
-		'profile_pic' => '',
-		'about' => 'About you...'
-	];
-
-	login_or_register($data_to_send, $_POST['sess_id']);
-?>
+<script type="text/javascript">
+	window.opener.NN.recieve_token(document.getElementById('access_token').innerHTML, <?= ($_GET['callback'] == TRUE ? 'true' : 'false') ?>);
+</script>

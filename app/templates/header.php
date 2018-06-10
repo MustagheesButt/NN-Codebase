@@ -28,7 +28,7 @@
     <body>
 		<nav>
 			<div class="nav-top">
-				<a href="/"><img src="./images/logo.png" class="logo" /></a>
+				<a href="./"><img src="./images/logo.png" class="logo" /></a>
 			</div>
 			
 			<div class="nav-bottom">

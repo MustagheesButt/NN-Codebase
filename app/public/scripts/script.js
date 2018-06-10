@@ -120,6 +120,48 @@ $(document).ready(function () {
 		}
 		imp_click_counter++;
 	});*/
+
+	/** LOGIN HANDLERS **/
+	NN.init({
+		client_id: 1,
+		scope: "id.first_name.last_name.email",
+
+		loginCallback: function (response) {
+			$.ajax({
+				type: "POST",
+				url: "members.php/",
+				data: {
+					"user_id": response.id,
+					"full_name": response.first_name + " " + response.last_name,
+					"email": response.email,
+					"about": "Hi! I'm a student.",
+					"access_token": NN.access_token
+				},
+				success: function (responseText) {
+					//console.log(responseText);
+					if (responseText == "logged in" || responseText == "registered")
+						location.reload(); // refresh page
+				}
+			});
+		}
+	});
+
+	$(".login-btn").click(function (e) {
+		e.preventDefault();
+		NN.login();
+	});
+
+	$(".logout-btn").click(function () {
+		$.ajax({
+			type: "POST",
+			url: "members.php",
+			data: {"logout": true},
+			success: function (responseText) {
+				location.reload();
+			}
+		});
+	});
+	/** LOGIN HANDLERS END **/
 });
 
 function getDisplayQuote() {
